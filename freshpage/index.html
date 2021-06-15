@@ -1,0 +1,231 @@
+<html>
+  <head>
+    <style>
+@font-face {
+  font-family: Geom;
+  src: url('fonts/medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: Geom;
+  src: url('fonts/bold.ttf') format('truetype');
+  font-weight: Bold;
+}
+@font-face {
+  font-family: Geom;
+  src: url('fonts/mediumitalic.ttf') format('truetype');
+  font-style: italic;
+}
+*{
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #000;
+  color: #777;
+  margin: 0;
+  font-family: Geom;
+}
+.container {
+  margin: 50px auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.step {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+}
+.step {
+  flex: 0;
+  padding-left: 50px;
+  border-left: 1px solid #333;
+}
+.step.active {
+  border-left: 1px solid #999;
+}
+.step .figure.jump {
+  margin-left: 132px;
+}
+.step.cent {
+  padding-left: 200px;
+}
+.note {
+  width: 800px;
+  margin-left: 100px;
+  text-align: right;
+}
+.note.quote {
+  padding-right: 30px;
+  border-right: 1px solid #fff;
+}
+
+.step.sideway .figure {
+  display:none;
+}
+.step.sideway .figure.active {
+  display:block;
+}
+.note h2 {
+  color: #eee;
+}
+.note em {
+  color: #aaa;
+}
+.step {
+  position: relative;
+}
+.step.active .marks {
+  position: absolute;
+  top: -50px;
+  left: 0px;
+  display: flex;
+  height: 36px;
+  flex-direction: row;
+}
+.step .marks {
+  display: none;
+}
+.step .mark {
+  margin:3px;
+  border: 1px solid #333;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.step .mark.active {
+  border: 1px solid #999;
+}
+.step .keys {
+  display: none;
+}
+.step.active .keys {
+  display: block;
+  position: absolute;
+  left: -90px;
+  top: -75px;
+}
+.note a {
+  color: #42845b;
+  text-decoration: none;
+}
+.note a:hover {
+  color: #61bd84;
+}
+    </style>
+    <script src="talk.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="note">
+        <h2>Fresh Page</h2>
+      </div>
+      <div class="note quote">
+
+     <p>
+     "Software is invisible and unvisualizable. Geometric abstractions are powerful tools. The floor plan of a building helps both architect and client evaluate spaces, traffic flows, views. Contradictions become obvious, omissions can be caught. Scale drawings of mechanical parts and stick-figure models of molecules, although abstractions, serve the same purpose. A geometric reality is captured in a geometric abstraction.
+    </p>
+    <p>
+The reality of software is not inherently embedded in space. Hence it has no ready geometric representation in the way that land has maps, silicon chips have diagrams, computers have connectivity schematics. As soon as we attempt to diagram software structure, we find it to constitute not one, but several, general directed graphs, superimposed one upon another. The several graphs may represent the flow of control, the flow of data, patterns of dependency, time sequence, name-space relationships. These are usually not even planar, much less hierarchical. Indeed, one of the ways of establishing conceptual control over such structure is to enforce link cutting until one or more of the graphs becomes hierarchical.
+    </p>
+    <p>
+In spite of progress in restricting and simplifying the structures of software, they remain inherently unvisualizable, thus depriving the mind of some of its most powerful conceptual tools. This lack not only impedes the process of design within one mind, it severely hinders communication among minds."
+    </p>
+    <p><em>— Frederick P. Brooks, The Mythical Man-Month, 1975</em></p>
+      </div>
+      <div class="note">
+        <p>It is hard to say how infuential these ideas have been. But considering that visualization discussions have, almost exclusively, been reserved for data and the so called visual languages have been a variation on clumsy flow charts; Most people must feel a similar resignation.</p>
+        <p>In any case, it is worth asking if programs with various layers of complexity can be made to appeal to our visual and spatial capacities. The importance of which is probably parallel to majority volume of brain regions and share of neural processing power.</p>
+      </div>
+      <div class="step short"><img class="figure" src="1.png" /></div>
+      <div class="note">
+        <p>Above is a sample flowchart for a simple algorithm with conditionals and loops. It is good for an overview but quickly turns into a mess with some details. Below is the same graph in matrix representation. Each column is reserved for outgoing links, rows for incoming links.<p>
+      </div>
+      <div class="step">
+        <img class="figure" src="2.png" />
+      </div>
+      <div class="note">
+        <p>Leaving valuable space empty makes it impossible to use in physical media. But, requiring very litle for rendering, it deserves further attention for interactive programs that can refresh the finite screen.</p>
+        <p><em>1.</em> The first row will be left empty, meaning no incoming links.</p>
+        <p><em>2.</em> The final column with no outgoing links will also be left empty.</p>
+        <p><em>3.</em> Since the loops manifest in multiple nodes, the diagonal will also be empty.</p>
+      </div>
+      <div class="step sideway">
+        <img class="figure active" src="2a.png" />
+        <img class="figure" src="2b.png" />
+        <img class="figure" src="2c.png" />
+      </div>
+      <div class="note">
+        <p>The diagonal cells, being at the intersection of a row and column, can serve special duty.</p>
+        <p><em>1-5.</em> Node labels can be placed on these cells and not be duplicated at the headers. </p>
+        <p><em>6.</em> The new matrix.</p>
+      </div>
+      <div class="step sideway">
+        <img class="figure active" src="3a.png" />
+        <img class="figure" src="3b.png" />
+        <img class="figure" src="3c.png" />
+        <img class="figure" src="3d.png" />
+        <img class="figure" src="3e.png" />
+        <img class="figure jump" style="margin-top:38px;" src="3f.png" />
+      </div>
+      <div class="note">
+        <p>Now that the node labels are localized, the matrix appears like a restriction on the positioning of nodes and shape of connections.</p>
+      </div>
+      <div class="step" style="padding-left:200px;"><img class="figure" src="4.png" /></div>
+      <div class="note">
+        <p>Visual distinctions will bring the two representations together.</p>
+    <p><em>1.</em> Symbols can convey the roles of nodes.</p>
+    <p><em>2.</em> Outgoing and incoming lines can be differentiated with brightness.</p>
+     <p><em>3.</em> Lines beyond the connection corner can be trimmed.</p>
+     <p><em>4.</em> Corners become the anchor for all information.</p>
+      </div>
+      <div class="step sideway" style="padding-left:173px;">
+        <img class="figure active" style="margin-top: -21px; margin-left:-4px;" src="5.png" />
+        <img class="figure" style="margin-top: -23px; margin-left:-4px;" src="5a.png" />
+        <img class="figure" src="5b.png" />
+        <img class="figure" src="5d.png" />
+      </div>
+      <div class="note">
+        <p>There is some waste in the space utilization. And there is some benefit in rapid redrawing and navigation on a two dimensional discrete space. I feel on track for an alternate presentation.</p>
+        <p>Now, the restrictions on the layout can be utilized to convey further distinctions. As an example of the details that can be incorporated in to the presentation: multiple outgoing connections will be differentiated at the source.</p>
+        <p><em>1.</em> Connection labels are no longer scattered on the matrix. It is not necessary to vary the width of columns.</p>
+        <p><em>2.</em> The nodes can all be positioned along a straight line. Connection lines as simple guides to corners are left on the background.</p>
+        <p><em>3.</em> Longer labels can extend in the row.</p>
+      </div>
+      <div class="step sideway" style="padding-left:173px;">
+        <img class="figure active" src="6a.png" />
+        <img class="figure" src="6b.png" />
+        <img class="figure" src="6c.png" />
+      </div>
+      <div class="note">
+        <p>This is my static introduction to dynamic graph presentation with a balanced emphasis on two aspects of machine presence: visualization and manipulation of structure.</p>
+        <p>One interactive experiment is based on proof graphs of <a href="https://incredible.pm">incredible.pm</a>. Including blocks with multiple input and output ports.</p>
+      </div>
+      <div class="step" style="padding-left: 200px;">
+        <img class="figure" src="proof.png" alt="">
+      </div>
+      <div class="note">
+        <p>The first experiment was on presenting LLVM IR: <a href="https://github.com/ibrahimsag/rw">rw</a>. Below is an updated view on it. It includes a function with multiple blocks, each of which contains multiple instructions having multiple arguments. The various layers of detail is differentiated by the size and shape of the symbols.</p>
+      </div>
+      <div class="step" style="padding-left: 100px;">
+        <img class="figure" src="net.png" alt="">
+      </div>
+      <div class="note">
+        <p>Initial motivation for this was an article: Magic Ink by Bret Victor. Which can be summarized as: Today's software can be made much better just by relying on traditional graphic design. It could have just as easily concluded: Digital screens are mostly used as a bad imitation of paper. But somehow that conclusion is obstructed by the title.</p>
+        <p>After a few experiments, I was convinced that screens are really under-utilized and went to work on <a href="https://canberead.com">canberead.com</a>. At the time, it seemed like all software was an extension of bureacracies and i needed to stand far back for a fresh perspeective.</p>
+        <p>As to the goal, it can be stated as a hope to make graph editing as straightforward as text editing. So that programming languages, which is the only proper interface to programmable machines, can find new graound and open up new possibilities.</p>
+        <p>One speculative support for my hopes is in the wide utility of template metaprogramming facilities of c++. Which relies on substitution, which is the basis of Lambda Calculus, which is implemented as graph rewriting and is known to be equivalent to Turing Machines, which makes the templating facilities Turing Complete. Being able to manipulate graphs directly, instead of through awkward syntactic constructs, would mean that we can drop the object orientation squeezed between templating and machine instructions. Instead, string substitution carried out by preprocessor step in a c compiler would be replaced by graph substitution. When the compiler can be instructed for powerful substitution, couple of data and function pointers called objects would deserve no special empasis.</p>
+        <p>In any case, graphs are the most flexible structure used in models and designs. It is fun to care for them. And gratitude for your attention.</p>
+      </div>
+      <div class="step" style="padding-left: 200px;">
+        <img class="figure" src="end.png" alt="">
+      </div>
+    </div>
+</body>
+</html>
