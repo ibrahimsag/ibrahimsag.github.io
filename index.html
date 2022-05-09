@@ -1,8 +1,27 @@
 <html>
   <head>
+    <meta charset="utf-8"/>
     <title>An experiment in presentation</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <style>
+@font-face {
+  font-family: Nale;
+  src: url('/fonts/monospace.ttf') format('truetype');
+}
+@font-face {
+  font-family: Geom;
+  src: url('/fonts/medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: Geom;
+  src: url('/fonts/bold.ttf') format('truetype');
+  font-weight: Bold;
+}
+@font-face {
+  font-family: Geom;
+  src: url('/fonts/mediumitalic.ttf') format('truetype');
+  font-style: italic;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -13,18 +32,101 @@ body {
   background: black;
   color: #777777;
   margin: 0;
-  display: flex;
-  align-items: center;
+  font-family: Geom;
 }
-svg {
-  margin: auto;
-  height: 100%;
+#container {
+  width: 768px;
+  margin-right: auto;
+  text-align: right;
+}
+#header {
+  margin-top: 30px;
+}
+#header h3 {
+  margin-left: auto;
+  font-family: Nale;
+  color: #fff;
+}
+#projects {
+}
+svg.social-icon {
+  height: 30px;
+  margin-right: 10px;
+}
+.svg-path {
+  fill: #888;
+}
+a:hover .svg-path {
+  fill: #aaa;
+}
+
+a {
+  color: #42845b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #61bd84;
+}
+em {
+  color: #999;
+}
+#projects blockquote {
+  margin-inline-end: 0;
+  padding-inline-end: 40px;
+  border-right: 1px solid #ababab;
+}
+#projects h3 {
+  margin-top: 50px;
+  color: #ababab;
+}
+
+#footer {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  align-content: flex-end;
+  padding-left: auto;
 }
     </style>
   </head>
   <body>
+    <div id="container">
+      <div id="header">
+      <h3>MACHINE PRESENCE AS A GUIDING QUESTION</h3>
+      </div>
+      <div id="projects">
+      <h3>An experiment in presenting geometry</h3><p> - <a href="https://canberead.com">canberead.com</a></p>
+<blockquote>
+<p>"As for ancient geometrical analysis and modern algebra, even apart from the fact that they deal only in highly abstract matters that seem to have no practical application, the former is so closely tied to the consideration of figures that it is unable to exercise the intellect without greatly tiring the imagination, while in the latter case one is so much a slave to certain rules and symbols that it has been turned into a confused and obscure art that bewilders the mind instead of being a form of knowledge that cultivates it."</p>
+<p><em>— R. Descartes, A Discourse on the Method, 1637</em></p>
+</blockquote>
 
+      <h3>Some experiments in presenting code</h3><p> - <a href="/freshpage">fresh page</a></p>
 
-<svg viewBox="-450 -450 900 900" style="dominant-baseline: hanging;"><path stroke="#777777" fill="none" stroke-width="4" d="M 90 377.5 A 290 290 0 0 1 -200 87.5 A 160 160 0 0 1 -40 -72.5 A 80 80 0 0 1 40 7.5 v -80"></path><path stroke="#ababab" fill="none" stroke-width="4" d="M 90 377.5 A 340 340 0 0 1 -250 37.5 A 210 210 0 0 1 -40 -172.5 A 130 130 0 0 1 90 -42.5 A 80 80 0 0 1 10 37.5 A 50 50 0 0 1 -40 -12.5 v 50"></path></svg>
+<blockquote>
+     <p>
+     "Software is invisible and unvisualizable. Geometric abstractions are powerful tools. The floor plan of a building helps both architect and client evaluate spaces, traffic flows, views. Contradictions become obvious, omissions can be caught. Scale drawings of mechanical parts and stick-figure models of molecules, although abstractions, serve the same purpose. A geometric reality is captured in a geometric abstraction.
+    </p>
+    <p>
+The reality of software is not inherently embedded in space. Hence it has no ready geometric representation in the way that land has maps, silicon chips have diagrams, computers have connectivity schematics. As soon as we attempt to diagram software structure, we find it to constitute not one, but several, general directed graphs, superimposed one upon another. The several graphs may represent the flow of control, the flow of data, patterns of dependency, time sequence, name-space relationships. These are usually not even planar, much less hierarchical. Indeed, one of the ways of establishing conceptual control over such structure is to enforce link cutting until one or more of the graphs becomes hierarchical.
+    </p>
+    <p>
+In spite of progress in restricting and simplifying the structures of software, they remain inherently unvisualizable, thus depriving the mind of some of its most powerful conceptual tools. This lack not only impedes the process of design within one mind, it severely hinders communication among minds."
+    </p>
+    <p><em>— Frederick P. Brooks, The Mythical Man-Month, 1975</em></p>
+</blockquote>
+      </div>
+      <div id="footer">
+        - ibrahim sagiroglu.
+      <a href="https://twitter.com/ratherthanpaper">
+<svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path class="svg-path" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+      <a href="https://github.com/ibrahimsag">
+<svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path class="svg-path" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+      </div>
+    </div>
    </body>
 </html>
